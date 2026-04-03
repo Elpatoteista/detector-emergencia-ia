@@ -1,0 +1,8 @@
+# Ocultar archivos de Python para que Vercel no se confunda
+requirements.txt
+detector_emergencia.py
+venv/
+.venv/
+__pycache__/
+*.task
+*.wav
