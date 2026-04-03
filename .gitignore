@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+dist/
+build/
+
+# MediaPipe Models
+*.task
+
+# Audio
+_alarm_tone.wav
+
+# OS
+.DS_Store
+Thumbs.db

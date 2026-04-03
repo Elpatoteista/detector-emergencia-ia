@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector Médico IA | Emergencias Médicas</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+</head>
+<body class="dark-mode">
+    <div id="loader" class="loader-overlay">
+        <div class="loader-content">
+            <div class="spinner"></div>
+            <p>Inicializando Motores de IA...</p>
+            <span id="load-status">Descargando MediaPipe...</span>
+        </div>
+    </div>
+
+    <main class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="pulse-red"></span>
+                <h1>DETECTOR <span>MÉDICO IA</span></h1>
+            </div>
+            <div class="system-status">
+                <span id="status-text">SISTEMA ACTIVO</span>
+                <div class="status-dot green" id="status-dot"></div>
+            </div>
+        </header>
+
+        <!-- Contenedor Principal de Video -->
+        <section class="video-section">
+            <div class="video-wrapper">
+                <video id="video" autoplay playsinline muted></video>
+                <canvas id="canvas"></canvas>
+                
+                <!-- Overlay de Emergencia -->
+                <div id="emergency-overlay" class="emergency-overlay hidden">
+                    <div class="emergency-content">
+                        <div class="warning-icon">!</div>
+                        <h2>EMERGENCIA DETECTADA</h2>
+                        <ul id="alert-list"></ul>
+                        <p class="medical-advice">BUSQUE ATENCIÓN MÉDICA INMEDIATA</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Panel de Control y Detecciones -->
+        <section class="dashboard">
+            <div class="grid-stats">
+                <!-- Ojos -->
+                <div class="stat-card" id="card-eyes">
+                    <div class="card-header">
+                        <span class="icon">👁️</span>
+                        <h3>OJOS</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="ear-values">
+                            <div class="ear-box">
+                                <small>Izquierdo</small>
+                                <span id="ear-left">0.00</span>
+                            </div>
+                            <div class="ear-box">
+                                <small>Derecho</small>
+                                <span id="ear-right">0.00</span>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="bar-eyes"></div>
+                        </div>
+                        <p class="status-detail" id="detail-eyes">Estado: Normal</p>
+                    </div>
+                </div>
+
+                <!-- Boca -->
+                <div class="stat-card" id="card-mouth">
+                    <div class="card-header">
+                        <span class="icon">👄</span>
+                        <h3>BOCA</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="asym-value">
+                            <span id="mouth-asym">0.0%</span>
+                            <small>Asimetría</small>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="bar-mouth"></div>
+                        </div>
+                        <p class="status-detail" id="detail-mouth">Simétrica</p>
+                    </div>
+                </div>
+
+                <!-- Cabeza -->
+                <div class="stat-card" id="card-head">
+                    <div class="card-header">
+                        <span class="icon">👤</span>
+                        <h3>CABEZA</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="tilt-value">
+                            <span id="head-tilt">0°</span>
+                            <small>Inclinación</small>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="bar-head"></div>
+                        </div>
+                        <p class="status-detail" id="detail-head">Estable</p>
+                    </div>
+                </div>
+
+                <!-- Parpadeo -->
+                <div class="stat-card" id="card-blink">
+                    <div class="card-header">
+                        <span class="icon">⏱️</span>
+                        <h3>PARPADEO</h3>
+                    </div>
+                    <div class="card-body">
+                        <div class="blink-stats">
+                            <div class="stat">
+                                <span id="bpm">0</span>
+                                <small>BPM</small>
+                            </div>
+                            <div class="stat">
+                                <span id="last-blink">0s</span>
+                                <small>Sin parpadeo</small>
+                            </div>
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="bar-blink"></div>
+                        </div>
+                        <p class="status-detail" id="detail-blink">Frecuencia normal</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Controles -->
+        <footer class="app-footer">
+            <button id="btn-recalibrate" class="btn secondary">Reiniciar / Calibrar</button>
+            <div class="hint">Este es un prototipo experimental. No es un dispositivo médico.</div>
+        </footer>
+    </main>
+
+    <!-- Audios -->
+    <audio id="beep-sound" src="https://assets.mixkit.co/active_storage/sfx/951/951-preview.mp3" preload="auto"></audio>
+
+    <!-- MediaPipe Tasks Vision -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/tasks-vision@0.10.3/vision_bundle.js" crossorigin="anonymous"></script>
+    <script src="script.js" type="module"></script>
+</body>
+</html>
