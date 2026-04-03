@@ -35,7 +35,7 @@ from mediapipe.tasks.python import vision as mp_vision
 # ─────────────────────────────────────────────────────────────────────────────
 EAR_THRESHOLD = 0.21
 EYE_ASYMMETRY_SECONDS = 5
-BOTH_EYES_CLOSED_SECONDS = 5       # Ambos ojos cerrados
+BOTH_EYES_CLOSED_SECONDS = 14       # Ambos ojos cerrados
 MOUTH_ASYMMETRY_THRESHOLD = 0.15   # 15% de diferencia
 MOUTH_ASYMMETRY_SECONDS = 5
 HEAD_TILT_ANGLE = 45               # Grados

@@ -8,7 +8,7 @@ import {
 // ─────────────────────────────────────────────────────────────────────────────
 const EAR_THRESHOLD = 0.21;
 const EYE_ASYMMETRY_SECONDS = 5;
-const BOTH_EYES_CLOSED_SECONDS = 5;
+const BOTH_EYES_CLOSED_SECONDS = 14;
 const MOUTH_ASYMMETRY_THRESHOLD = 0.15;
 const MOUTH_ASYMMETRY_SECONDS = 5;
 const HEAD_TILT_ANGLE = 45;
