@@ -1,8 +1,5 @@
 {
   "version": 2,
-  "public": true,
   "cleanUrls": true,
-  "framework": null,
-  "installCommand": "echo 'No install needed'",
-  "buildCommand": "echo 'No build needed'"
+  "outputDirectory": "."
 }
