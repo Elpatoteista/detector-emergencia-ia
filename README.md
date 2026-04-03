@@ -1,12 +1,3 @@
-# Detector de Emergencias Médicas Súbitas 🚨
-
-Sistema de detección en tiempo real de **asimetría facial** como indicador temprano de:
-- Parálisis facial (posible ACV/Stroke)
-- Pérdida de conciencia parcial
-
-## Tecnologías
-- **OpenCV** - Captura y procesamiento de video
-- **MediaPipe Face Mesh** - Detección de 478 landmarks faciales
 - **NumPy** - Cálculos numéricos
 
 ## Cómo funciona
