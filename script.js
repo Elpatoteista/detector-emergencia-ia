@@ -25,6 +25,11 @@ const emergencyOverlay = document.getElementById("emergency-overlay");
 const alertList = document.getElementById("alert-list");
 const btnRecalibrate = document.getElementById("btn-recalibrate");
 const beepSound = document.getElementById("beep-sound");
+const volumeSlider = document.getElementById("volume-slider");
+const volumeValue = document.getElementById("volume-value");
+
+// Inicializar volumen
+beepSound.volume = 0.5;
 
 // ── Estado de la Aplicación ──
 let faceLandmarker;
@@ -349,6 +354,12 @@ btnRecalibrate.onclick = () => {
     blinkStartTime = Date.now();
     timers.lastBlink = Date.now();
     Object.keys(alerts).forEach(k => alerts[k] = false);
+};
+
+volumeSlider.oninput = (e) => {
+    const val = e.target.value;
+    beepSound.volume = val;
+    volumeValue.innerText = `${Math.round(val * 100)}%`;
 };
 
 initialize();

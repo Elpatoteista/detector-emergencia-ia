@@ -293,6 +293,35 @@ canvas {
     justify-content: space-between;
     align-items: center;
     padding-top: 20px;
+    border-top: 1px solid var(--border-glass);
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.volume-control {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    padding: 8px 16px;
+    border-radius: 12px;
+    border: 1px solid var(--border-glass);
+    font-size: 0.85rem;
+}
+
+.volume-control input[type="range"] {
+    width: 100px;
+    cursor: pointer;
+    accent-color: var(--accent-blue);
+}
+
+#volume-value {
+    font-family: 'JetBrains Mono', monospace;
+    min-width: 40px;
 }
 
 .btn {
