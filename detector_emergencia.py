@@ -40,7 +40,7 @@ MOUTH_ASYMMETRY_THRESHOLD = 0.15   # 15% de diferencia
 MOUTH_ASYMMETRY_SECONDS = 5
 HEAD_TILT_ANGLE = 45               # Grados
 HEAD_TILT_SECONDS = 3
-NO_BLINK_WARNING_SECONDS = 8
+NO_BLINK_WARNING_SECONDS = 10
 CAMERA_INDEX = 0
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))

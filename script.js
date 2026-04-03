@@ -13,7 +13,7 @@ const MOUTH_ASYMMETRY_THRESHOLD = 0.15;
 const MOUTH_ASYMMETRY_SECONDS = 5;
 const HEAD_TILT_ANGLE = 45;
 const HEAD_TILT_SECONDS = 3;
-const NO_BLINK_WARNING_SECONDS = 8; // Actualizado a petición
+const NO_BLINK_WARNING_SECONDS = 10;
 
 // ── DOM Elements ──
 const video = document.getElementById("video");
