@@ -360,8 +360,203 @@ canvas {
 
 .hint { font-size: 0.7rem; color: var(--text-secondary); }
 
-/* Responsive */
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — Tablets (≤ 768px)
+   ═══════════════════════════════════════════════════════════════ */
 @media (max-width: 768px) {
-    .app-header h1 { font-size: 1rem; }
-    .grid-stats { grid-template-columns: 1fr; }
+    .app-container {
+        padding: 12px;
+        gap: 14px;
+    }
+
+    .app-header {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+
+    .app-header h1 {
+        font-size: 1rem;
+    }
+
+    .video-wrapper {
+        border-radius: 14px;
+        aspect-ratio: 4 / 3;
+    }
+
+    .grid-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 16px;
+        border-radius: 14px;
+    }
+
+    .stat-card:hover {
+        transform: none;
+    }
+
+    .ear-box span, .stat span, .asym-value span, .tilt-value span {
+        font-size: 1.1rem;
+    }
+
+    .app-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    .footer-left {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .hint {
+        text-align: center;
+    }
+
+    .emergency-content {
+        padding: 20px 24px;
+        margin: 10px;
+        border-radius: 14px;
+    }
+
+    .emergency-content h2 {
+        font-size: 1.1rem;
+        letter-spacing: 1px;
+    }
+
+    .warning-icon {
+        font-size: 2.2rem;
+    }
+
+    #alert-list li {
+        font-size: 0.85rem;
+        padding: 6px 0;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   RESPONSIVE — Teléfonos pequeños (≤ 480px)
+   ═══════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+    .app-container {
+        padding: 8px;
+        gap: 10px;
+    }
+
+    .logo h1 {
+        font-size: 0.85rem;
+    }
+
+    .system-status {
+        font-size: 0.7rem;
+    }
+
+    .video-wrapper {
+        border-radius: 10px;
+        aspect-ratio: 3 / 4;
+        max-height: 50vh;
+    }
+
+    .grid-stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .stat-card {
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .card-header {
+        margin-bottom: 10px;
+        gap: 8px;
+    }
+
+    .card-header .icon {
+        font-size: 1rem;
+    }
+
+    .card-header h3 {
+        font-size: 0.7rem;
+    }
+
+    .ear-box span, .stat span, .asym-value span, .tilt-value span {
+        font-size: 0.95rem;
+    }
+
+    .ear-box small, .stat small, .asym-value small, .tilt-value small {
+        font-size: 0.6rem;
+    }
+
+    .status-detail {
+        font-size: 0.65rem;
+    }
+
+    .progress-container {
+        margin: 8px 0;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 0.8rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .volume-control {
+        padding: 8px 12px;
+        justify-content: center;
+    }
+
+    .volume-control input[type="range"] {
+        width: 80px;
+    }
+
+    .github-link {
+        justify-content: center;
+        font-size: 0.8rem;
+    }
+
+    .hint {
+        font-size: 0.6rem;
+        text-align: center;
+    }
+
+    .emergency-overlay {
+        border-width: 5px;
+    }
+
+    .emergency-content {
+        padding: 16px 18px;
+        margin: 8px;
+    }
+
+    .warning-icon {
+        font-size: 1.8rem;
+        margin-bottom: 6px;
+    }
+
+    .emergency-content h2 {
+        font-size: 0.9rem;
+        margin-bottom: 12px;
+    }
+
+    #alert-list li {
+        font-size: 0.75rem;
+        padding: 5px 0;
+    }
+
+    .medical-advice {
+        font-size: 0.65rem;
+    }
 }
